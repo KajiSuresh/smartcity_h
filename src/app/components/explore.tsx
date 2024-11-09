@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -84,10 +85,11 @@ const Explore = () => {
                     <div key={index} className="relative group overflow-hidden rounded-lg flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                         <div className="relative h-[600px]">
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
-                            <img
+                            <Image
                                 src={adventure.image}
                                 alt={adventure.title}
                                 className="w-full h-full object-cover"
+                                fill
                             />
                         </div>
 

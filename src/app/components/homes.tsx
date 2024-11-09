@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Building2, GraduationCap, Briefcase, MapPin, Search, ArrowRight, Star, } from 'lucide-react';
+import { Building2, GraduationCap, Briefcase, MapPin, Search,  } from 'lucide-react';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -44,29 +44,29 @@ export default function Home() {
     },
   ];
 
-  const trending = [
-    {
-      image: "",
-      title: "Central Park Hotel",
-      category: "Tourism",
-      rating: 4.8,
-      reviews: 2453,
-    },
-    {
-      image: "",
-      title: "City University",
-      category: "Education",
-      rating: 4.9,
-      reviews: 1876,
-    },
-    {
-      image: "",
-      title: "Tech Hub",
-      category: "Business",
-      rating: 4.7,
-      reviews: 1234,
-    },
-  ];
+  // const trending = [
+  //   {
+  //     image: "",
+  //     title: "Central Park Hotel",
+  //     category: "Tourism",
+  //     rating: 4.8,
+  //     reviews: 2453,
+  //   },
+  //   {
+  //     image: "",
+  //     title: "City University",
+  //     category: "Education",
+  //     rating: 4.9,
+  //     reviews: 1876,
+  //   },
+  //   {
+  //     image: "",
+  //     title: "Tech Hub",
+  //     category: "Business",
+  //     rating: 4.7,
+  //     reviews: 1234,
+  //   },
+  // ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -80,6 +80,7 @@ export default function Home() {
             fill
             priority
             quality={100}
+           
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
         </div>

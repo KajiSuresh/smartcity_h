@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import Image from 'next/image';
 
 const Activities = () => {
   const adventures = [
@@ -103,10 +104,11 @@ const Activities = () => {
   }) => (
     <div className="group relative rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
       <div className="relative aspect-[4/3]">
-        <img
+        <Image
           src={image}
           alt={title}
           className="w-full h-full object-cover"
+         fill
         />
         <button className="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white">
           <Heart className="w-5 h-5 text-gray-600 hover:text-red-500" />

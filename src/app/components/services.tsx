@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Services = () => {
@@ -51,10 +52,12 @@ const Services = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-[800px]">
         {/* Wild Category - Large Card */}
         <div className="relative overflow-hidden rounded-2xl lg:col-span-2 lg:row-span-2">
-          <img
+          <Image
             src={categories[0].image}
             alt={categories[0].title}
             className="absolute inset-0 w-full h-full object-cover"
+            fill
+            
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 flex items-center gap-3">
@@ -69,10 +72,11 @@ const Services = () => {
 
         {/* Thrills Category */}
         <div className="relative overflow-hidden rounded-2xl">
-          <img
+          <Image
             src={categories[1].image}
             alt={categories[1].title}
             className="absolute inset-0 w-full h-full object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 flex items-center gap-3">
@@ -87,10 +91,11 @@ const Services = () => {
 
         {/* Festive Category */}
         <div className="relative overflow-hidden rounded-2xl">
-          <img
+          <Image
             src={categories[2].image}
             alt={categories[2].title}
             className="absolute inset-0 w-full h-full object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 flex items-center gap-3">
@@ -105,10 +110,11 @@ const Services = () => {
 
         {/* Heritage Category - Wide Card */}
         <div className="relative overflow-hidden rounded-2xl lg:col-span-2">
-          <img
+          <Image
             src={categories[3].image}
             alt={categories[3].title}
             className="absolute inset-0 w-full h-full object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-6 left-6 flex items-center gap-3">
