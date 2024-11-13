@@ -11,7 +11,7 @@ export default function Home() {
       title: "Tourism",
       description: "Explore the city's finest attractions",
       stats: "2,500+ Locations",
-      href: "/tourism",
+      href: "/filters",  // Changed from "/tourism"
       bgColor: "bg-blue-50 dark:bg-blue-950",
       iconColor: "text-blue-500",
     },
@@ -20,7 +20,7 @@ export default function Home() {
       title: "Education",
       description: "Top-rated educational institutions",
       stats: "500+ Institutions",
-      href: "/education",
+      href: "/filters",  // Changed from "/education"
       bgColor: "bg-green-50 dark:bg-green-950",
       iconColor: "text-green-500",
     },
@@ -29,7 +29,7 @@ export default function Home() {
       title: "Jobs",
       description: "Find your dream career",
       stats: "10,000+ Opportunities",
-      href: "/jobs",
+      href: "/filters",  // Changed from "/jobs"
       bgColor: "bg-purple-50 dark:bg-purple-950",
       iconColor: "text-purple-500",
     },
@@ -38,38 +38,15 @@ export default function Home() {
       title: "Business",
       description: "Connect with local businesses",
       stats: "5,000+ Companies",
-      href: "/business",
+      href: "/filters",  // Changed from "/business"
       bgColor: "bg-orange-50 dark:bg-orange-950",
       iconColor: "text-orange-500",
     },
   ];
-
-  // const trending = [
-  //   {
-  //     image: "",
-  //     title: "Central Park Hotel",
-  //     category: "Tourism",
-  //     rating: 4.8,
-  //     reviews: 2453,
-  //   },
-  //   {
-  //     image: "",
-  //     title: "City University",
-  //     category: "Education",
-  //     rating: 4.9,
-  //     reviews: 1876,
-  //   },
-  //   {
-  //     image: "",
-  //     title: "Tech Hub",
-  //     category: "Business",
-  //     rating: 4.7,
-  //     reviews: 1234,
-  //   },
-  // ];
+ 
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen mt-24">
       {/* Hero Section with Search */}
       <section className="relative h-[600px] flex items-center">
         <div className="absolute inset-0">
@@ -132,47 +109,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trending Section */}
-      {/* <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-2">Trending Now</h2>
-              <p className="text-muted-foreground">Discover what is popular in the city</p>
-            </div>
-            <Button variant="outline" className="gap-2">
-              View All <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {trending.map((item) => (
-              <Card key={item.title} className="overflow-hidden group">
-                <div className="relative h-48">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 bg-background/95 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                    {item.category}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Star className="h-4 w-4 fill-current text-yellow-500" />
-                    <span>{item.rating}</span>
-                    <span>•</span>
-                    <span>{item.reviews} reviews</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 }

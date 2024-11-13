@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu';
@@ -9,13 +10,17 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import AuthModal from '../components/auth/AuthModal';
+
 
 export default function Navbar() {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  
   const menuItems = [
-    { href: '/tourism', label: 'Tourism', color: 'text-blue-600' },
-    { href: '/education', label: 'Education', color: 'text-green-600' },
-    { href: '/jobs', label: 'Jobs', color: 'text-purple-600' },
-    { href: '/business', label: 'Business', color: 'text-orange-600' },
+    { href: '/filters', label: 'Tourism', color: 'text-blue-600' },
+    { href: '/filters', label: 'Education', color: 'text-green-600' },
+    { href: '/filters', label: 'Jobs', color: 'text-purple-600' },
+    { href: '/filters', label: 'Business', color: 'text-orange-600' },
   ];
 
   return (
@@ -44,21 +49,21 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <NavigationMenu className="hidden lg:flex">
-      <NavigationMenuList className="space-x-6">
-        {menuItems.map((item) => (
-          <NavigationMenuItem key={item.href}>
-            <Link href={item.href} legacyBehavior passHref>
-              <NavigationMenuLink className="relative px-3 py-2">
-                <span className={`text-gray-600 font-medium hover:${item.color} transition-colors`}>
-                  {item.label}
-                </span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 transition-transform hover:bg:purple-600" />
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+              <NavigationMenuList className="space-x-6">
+                {menuItems.map((item) => (
+                  <NavigationMenuItem key={item.href}>
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink className="relative px-3 py-2">
+                        <span className={`text-gray-600 font-medium hover:${item.color} transition-colors`}>
+                          {item.label}
+                        </span>
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 transition-transform hover:bg:purple-600" />
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-6">
@@ -68,7 +73,10 @@ export default function Navbar() {
               </button>
 
               {/* Sign In Button */}
-              <Button className="hidden lg:flex bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full px-6 hover:opacity-90 transition-opacity">
+              <Button 
+                onClick={() => setIsAuthModalOpen(true)}
+                className="hidden lg:flex bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full px-6 hover:opacity-90 transition-opacity"
+              >
                 <UserCircle className="mr-2 h-4 w-4" /> Sign In
               </Button>
 
@@ -99,7 +107,10 @@ export default function Navbar() {
                         </Button>
                       </Link>
                     ))}
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:opacity-90">
+                    <Button 
+                      onClick={() => setIsAuthModalOpen(true)}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:opacity-90"
+                    >
                       <UserCircle className="mr-2 h-5 w-5" /> Sign In
                     </Button>
                   </div>
@@ -109,6 +120,11 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      <AuthModal 
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     </nav>
   );
 }
